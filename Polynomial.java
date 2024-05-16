@@ -6,7 +6,7 @@ public class Polynomial{
         arrCoefficient = temp;
     }
     public Polynomial(double[] arrPol){// ArrDouble-Arg constructor with the argument that will be used to represent a non-zero Polynomial
-        arrCoefficient = arrPol;
+        arrCoefficient = arrPol.clone();
     }
 
     public Polynomial add(Polynomial toAdd){//this method adds two polynomial objects
@@ -14,10 +14,10 @@ public class Polynomial{
         int lengthB = toAdd.arrCoefficient.length;
         int returnLength;
         if(lengthA>lengthB){
-            returnLength = lengthA;
+            returnLength = lengthB;
         }
         else{
-            returnLength = lengthB;
+            returnLength = lengthA;
         }
         for(int i=0; i<returnLength; i++){
             this.arrCoefficient[i] = this.arrCoefficient[i]+toAdd.arrCoefficient[i];
