@@ -24,6 +24,6 @@ public class Driver {
         Polynomial p4 = new Polynomial(a4);
         System.out.println(p4.evaluate(1));        
         System.out.println(p4.evaluate(10000));
-        System.out.println(p4.hasRoot(0));        
-    } 
+        System.out.println(p4.hasRoot(0));
+    }
 }
