@@ -39,10 +39,7 @@ public class Polynomial{
 
     public boolean hasRoot(double potRoot){
 
-        if(evaluate(potRoot)==0){
-            return true;
-        }
-        return false;
+        return (evaluate(potRoot)==0);
     }
 
 }
