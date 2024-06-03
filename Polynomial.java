@@ -52,7 +52,11 @@ public class Polynomial{
     }
 
     public Polynomial add(Polynomial toAdd){//this method adds two polynomial objects
-        
+
+        Polynomial tempThis = this.simplify();
+        Polynomial tempToAdd = toAdd.simplify();
+
+        //left to complete
 
         return this;
     }
