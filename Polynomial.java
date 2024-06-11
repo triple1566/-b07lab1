@@ -1,3 +1,5 @@
+
+
 public class Polynomial{
 
     double[] nonZeroCoeffArr = {};//field to represent the polynomial via coefficients
@@ -58,6 +60,39 @@ public class Polynomial{
 
         //left to complete
 
+        int HighestPower=0;
+
+        for(int i=0; i<tempThis.expArr.length; i++){
+            if (tempThis.expArr[i]>HighestPower){
+                HighestPower = tempThis.expArr[i];
+            }
+        }
+        for(int i=0; i<tempToAdd.expArr.length; i++){
+            if (tempThis.expArr[i]>HighestPower){
+                HighestPower = tempThis.expArr[i];
+            }
+        }
+
+        int[] resultingExp = new int[HighestPower];
+        double[] resultingCoeff = new double[HighestPower];
+
+        for(int i=0; i< HighestPower; i++){
+            double temp=0;
+            for(int j=0; j<tempToAdd.expArr.length; j++){
+                if (tempThis.expArr[j]==i){
+                    temp+=tempThis.nonZeroCoeffArr[j];
+                }
+                if (tempToAdd.expArr[j]==i){
+                    temp+=tempToAdd.nonZeroCoeffArr[j];
+                }
+            }
+            resultingCoeff[i]=temp;
+            resultingExp[i]=i;
+        }
+
+        this.expArr=resultingExp;
+        this.nonZeroCoeffArr=resultingCoeff;
+
         return this;
     }
 
@@ -75,6 +110,20 @@ public class Polynomial{
     public boolean hasRoot(double potRoot){
 
         return (evaluate(potRoot)==0);
+    }
+
+    public Polynomial multiply(Polynomial toMultiply){
+
+        Polynomial tempThis=this.add(new Polynomial());
+        Polynomial tempToMultiply=toMultiply.add(new Polynomial());
+
+        int HighestPower=tempThis.nonZeroCoeffArr.length+tempToMultiply.nonZeroCoeffArr.length-2;
+
+        
+
+        for(int i=0; i<)
+
+        return this;
     }
 
 }
